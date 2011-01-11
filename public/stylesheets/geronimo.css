@@ -1,0 +1,127 @@
+body{
+	background-color: #BFDAD7;
+	font-family:"Courier New",Times,serif;
+	height: 100%;
+}
+
+.leftside {
+	/*set the div in the top-left corner of the screen*/
+	position:absolute;
+	top:0;
+	left:0;
+ 
+	/*background-color: red;*/
+	height: 100%;
+	width: 50%;
+}
+
+.rightside {
+	/*set the div in the top-left corner of the screen*/
+	position:absolute;
+	top:0;
+	left:50%;
+	/*background-color: blue;*/
+	height: 100%;
+	width: 50%;			
+}
+
+.DownRight { text-align: right;}
+#DownAgain { font-size: 32px; margin-top: 200px; margin-left: -13px; margin-bottom: -25px;}
+.DownAgainRight {margin-right: -13px; margin-bottom: -25px;}
+
+#AcrossNow { }		
+#AcrossAgain { margin-left: -13px; }
+.AcrossAgainRight {margin-right: -13px;}			
+.ColumnOne{
+	/*background-color: yellow;*/
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+.ColumnTwo{
+	/*background-color: purple;*/
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 200px;
+}
+
+.ColumnThree{
+	/*background-color: green;*/
+	height: 100%;
+	float: right;
+}
+
+.ColumnFour{
+	/*background-color: orange;*/
+	height: 100%;
+	float: right;
+	margin-right: -6px;
+}
+
+.Triptych{
+	height: 300px;
+	width: 200px;
+	opacity: 0;
+}
+
+.TriptychContainer{
+	margin: 10px;
+}
+
+.BandImages{
+	/*background-color: red;*/			
+	height: 350px;
+	display: block;
+	text-align: center;
+	margin-top: 8%;
+	z-index: 100;
+}
+
+.CenterImages{
+	display: inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	width: 700px;			
+}
+
+.BandSays{
+	width: 200px;
+	margin-left:auto;
+	margin-right:auto;		
+	text-align: left;	
+}
+
+.NextShow{
+	margin: 10px;
+}
+
+.rounded-img2 {
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.6);
+	display: inline-block;
+}
+
+#G { font-size: 16px;}
+#E { font-size: 18px;}
+#R { font-size: 20px;}
+#O { font-size: 22px;}
+#N { font-size: 24px;}
+#I { font-size: 26px;}
+#M { font-size: 28px;}
+#O2 { font-size: 30px;}
+#BANG { font-size: 32px;}
+
+#G-AA { font-size: 34px;}
+#E-AA { font-size: 36px;}
+#R-AA { font-size: 38px;}
+#O-AA { font-size: 40px;}
+#N-AA { font-size: 42px;}
+#I-AA { font-size: 44px;}
+#M-AA { font-size: 46px;}
+#O2-AA { font-size: 48px;}
+#BANG-AA { font-size: 50px;}

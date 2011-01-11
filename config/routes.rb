@@ -10,7 +10,7 @@ SampleApp::Application.routes.draw do
   resources :microposts,    :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
   
-  root :to => "pages#home"
+  root :to => "geronimo#index"
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
