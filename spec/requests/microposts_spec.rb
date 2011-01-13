@@ -15,7 +15,7 @@ describe "Microposts" do
     describe "failure" do
       it "should not make a new micropost" do
         lambda do
-          visit root_path
+          visit '/home'
           fill_in :micropost_content, :with => ""
           click_button
           response.should render_template('pages/home')
@@ -28,12 +28,43 @@ describe "Microposts" do
       it "should make a new micropost" do
         content = "Lorem ipsum dolor sit amet"
         lambda do
-          visit root_path
+          visit '/home'
           fill_in :micropost_content, :with => content
           click_button
           response.should have_selector('span.content', :content => content)
         end.should change(Micropost, :count).by(1)
       end
     end
+  end
+  
+  describe "blog creation" do
+
+    
+    describe "success" do
+      it "should make a new micropost+blog" do
+        content = "blog Lorem ipsum dolor sit amet"
+        lambda do
+          visit '/home'
+          fill_in :micropost_content, :with => content
+          click_button
+          response.should have_selector('span.content', :content => content)
+        end.should change(Blog, :count).by(1)
+      end
+    end
+	
+    describe "success frontpage" do
+      it "should make a new micropost+blog and publish to front page" do
+        content = "blog frontpage Lorem ipsum dolor sit amet"
+        lambda do
+          visit '/home'
+          fill_in :micropost_content, :with => content
+          click_button
+		  response.should have_selector('span.content', :content => content)
+		  expected_content = 'Lorem ipsum dolor sit amet'
+		  visit '/'
+          response.should have_selector('div.BandSays', :content => expected_content)
+        end.should change(Blog, :count).by(1)
+      end
+    end	
   end
 end

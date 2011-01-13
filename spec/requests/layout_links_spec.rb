@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe "LayoutLinks" do
   
-  it "should have a Home page at '/'" do
+  it "should have a Geronimo page at '/'" do
     get '/'
-    response.should have_selector('title', :content => "Home")
+    response.should have_selector('title', :content => "Geronimo")
   end
   
   it "should have a Contact page at '/contact'" do
@@ -33,7 +33,7 @@ describe "LayoutLinks" do
   end
   
   it "should have the right links on the layout" do
-    visit root_path
+    visit home_path
     response.should have_selector('title', :content => "Home")
     click_link "About"
     response.should have_selector('title', :content => "About")
@@ -48,7 +48,7 @@ describe "LayoutLinks" do
   
   describe "when not signed in" do
     it "should have a signin link" do
-      visit root_path
+      visit home_path
       response.should have_selector("a", :href => signin_path,
                                          :content => "Sign in")
     end
@@ -65,25 +65,25 @@ describe "LayoutLinks" do
     end
     
     it "should have a signout link" do
-      visit root_path
+      visit home_path
       response.should have_selector("a", :href => signout_path,
                                          :content => "Sign out")
     end
     
     it "should have a profile link" do
-      visit root_path
+      visit home_path
       response.should have_selector("a", :href => user_path(@user),
                                          :content => "Profile")
     end
     
     it "should have a settings link" do
-      visit root_path
+      visit home_path
       response.should have_selector("a", :href => edit_user_path(@user),
                                          :content => "Settings")
     end
     
     it "should have a users link" do
-      visit root_path
+      visit home_path
       response.should have_selector("a", :href => users_path,
                                          :content => "Users")
     end

@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   
   has_many :microposts,    :dependent => :destroy
+  has_many :blogs,    	   :dependent => :destroy do 
+    def create_with_post(post)
+      new_from_post(post).save
+    end
+  end
+  
   has_many :relationships, :dependent => :destroy,
                            :foreign_key => "follower_id"
   has_many :reverse_relationships, :dependent => :destroy,

@@ -173,6 +173,38 @@ describe User do
     end
   end
 
+  describe "blog associations" do
+    
+    before(:each) do
+      @user = User.create(@attr)
+      @blog1 = Factory(:blog, :user => @user, :created_at => 1.day.ago)
+      @blog2 = Factory(:blog, :user => @user, :created_at => 1.hour.ago)
+    end
+    
+    it "should have a blogs attribute" do
+      @user.should respond_to(:blogs)
+    end
+    
+    it "should have the right blogs in the right order" do
+      @user.blogs.should == [@blog1, @blog2]
+    end
+   
+    it "should change by 1 if the user creates a post with create_with_post" do
+	  lambda do
+		@user.blogs.create_with_post("blog xxx yyy")
+	  end.should change(Blog, :count).by(1)
+	end
+	
+    it "should destroy associated blogs" do
+      @user.destroy
+      [@blog1, @blog2].each do |blog|
+        lambda do
+          Blog.find(blog)
+        end.should raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
+  
   describe "micropost associations" do
     
     before(:each) do

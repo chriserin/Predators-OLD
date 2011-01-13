@@ -1,6 +1,7 @@
 class GeronimoController < ApplicationController
 
   def index
-    render :layout => false
+    @latest_front_page_blogpost = Blog.latest_for_frontpage.blogtext
+	render :layout => false
   end
 end

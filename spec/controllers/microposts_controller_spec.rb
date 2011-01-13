@@ -51,14 +51,38 @@ describe MicropostsController do
         end.should change(Micropost, :count).by(1)
       end
       
-      it "should redirect to the root path" do
+      it "should redirect to the home path" do
         post :create, :micropost => @attr
-        response.should redirect_to(root_path)
+        response.should redirect_to(home_path)
       end
 
       it "should have a flash success message" do
         post :create, :micropost => @attr
         flash[:success].should =~ /micropost created/i
+      end
+    end
+	
+	describe "success as blog post" do
+      
+      before(:each) do
+        @attr = { :content => "blog ipsum dolor sit amet" }
+      end
+      
+      it "should create a micropost+blog" do
+        lambda do
+          post :create, :micropost => @attr
+        end.should change(Blog, :count).by(1)
+      end
+
+      it "should redirect to the root path for frontpage post" do
+	    @attr = { :content => "blog frontpage ipsum dolor sit amet" }
+        post :create, :micropost => @attr
+        response.should redirect_to(root_path)
+      end
+	  
+      it "should have a flash success message for a blog" do
+        post :create, :micropost => @attr
+        flash[:success].should =~ /blog created/i
       end
     end
   end

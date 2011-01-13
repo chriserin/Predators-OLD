@@ -13,3 +13,9 @@ Factory.define :micropost do |micropost|
   micropost.content "Foo bar"
   micropost.association :user
 end
+
+Factory.define :blog do |blog|
+  blog.blogtext "zzz xxx"
+  blog.association :user
+  blog.frontpage false
+end
