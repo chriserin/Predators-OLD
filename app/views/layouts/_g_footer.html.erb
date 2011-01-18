@@ -1,0 +1,12 @@
+<div class="footer">
+    <nav class="footer">
+		<ul>
+			<li><%= link_to "Front", root_path %></li>      
+			<li><%= link_to "Myspace", 'http://www.myspace.com/thegeronimoband' %></li>
+			<li><%= link_to "Facebook", 'http://www.facebook.com/thegeronimoband' %></li>
+			<% if signed_in? %>
+				<li><%= link_to "Sign out", signout_path %></li>
+			<% end %>
+		</ul>
+	</nav>
+</div>

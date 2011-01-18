@@ -62,8 +62,8 @@ describe MicropostsController do
       end
     end
 	
-	describe "success as blog post" do
-      
+    describe "success as blog post" do
+        
       before(:each) do
         @attr = { :content => "blog ipsum dolor sit amet" }
       end
@@ -73,20 +73,32 @@ describe MicropostsController do
           post :create, :micropost => @attr
         end.should change(Blog, :count).by(1)
       end
-
-      it "should redirect to the root path for frontpage post" do
-	    @attr = { :content => "blog frontpage ipsum dolor sit amet" }
-        post :create, :micropost => @attr
-        response.should redirect_to(root_path)
-      end
-	  
+    
       it "should have a flash success message for a blog" do
         post :create, :micropost => @attr
         flash[:success].should =~ /blog created/i
-      end
+      end    
     end
+    
+    describe "success as show post" do
+        
+      before(:each) do
+        @attr = { :content => "show ipsum dolor 12/31/2011 sit amet" }
+      end
+      
+      it "should create a micropost+show" do
+        lambda do
+          post :create, :micropost => @attr
+        end.should change(Show, :count).by(1)
+      end
+    
+      it "should have a flash success message for a blog" do
+        post :create, :micropost => @attr
+        flash[:success].should =~ /show created/i
+      end    
+    end  
   end
-
+    
   describe "DELETE 'destroy'" do
 
     describe "for an unauthorized user" do

@@ -6,12 +6,16 @@ SampleApp::Application.routes.draw do
     end
   end
   
+  resources :blogs,         :only => [:destroy]
+  resources :shows
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :microposts,    :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
   
   root :to => "geronimo#index"
 
+  match '/blogs',    :to => 'geronimo#blogs'
+  match '/all_shows',    :to => 'geronimo#shows'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'

@@ -19,3 +19,8 @@ Factory.define :blog do |blog|
   blog.association :user
   blog.frontpage false
 end
+
+Factory.define :show do |show|
+  show.showtext "January 4th at the yacht club in Iowa City"
+  show.showdate DateTime.now.next_year  
+end

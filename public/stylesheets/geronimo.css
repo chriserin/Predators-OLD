@@ -1,3 +1,4 @@
+
 body{
 	background-color: #BFDAD7;
 	font-family:"Courier New",Times,serif;
@@ -13,6 +14,7 @@ body{
 	/*background-color: red;*/
 	height: 100%;
 	width: 50%;
+	z-index: 1;
 }
 
 .rightside {
@@ -22,7 +24,8 @@ body{
 	left:50%;
 	/*background-color: blue;*/
 	height: 100%;
-	width: 50%;			
+	width: 50%;
+	z-index: 1;	
 }
 
 .DownRight { text-align: right;}
@@ -73,11 +76,12 @@ body{
 
 .BandImages{
 	/*background-color: red;*/			
+	position: relative;
 	height: 350px;
 	display: block;
 	text-align: center;
 	margin-top: 8%;
-	z-index: 100;
+	z-index: 2;
 }
 
 .CenterImages{
@@ -125,3 +129,102 @@ body{
 #M-AA { font-size: 46px;}
 #O2-AA { font-size: 48px;}
 #BANG-AA { font-size: 50px;}
+
+a{
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+  /* color: #09c; */
+}
+
+a:hover {
+	color: orange;
+}
+
+.BandName{
+	font-size: 40px;
+}
+
+.container {
+	margin: 40px;
+}
+
+#ShowsContainer
+{
+	margin: 40px;
+	font-size: 14px;
+	width: 740px;
+}
+
+.showsHeader{
+	margin: 20px;
+}
+
+#PastShows {
+  background-color: #CC99CC;
+  padding: 10px;
+}
+
+#UpcomingShows {
+  background-color: #CCFF33;
+  padding: 10px;
+}
+
+
+
+.show{
+	margin: 5px;
+}
+
+
+nav {
+  padding: 0 0.7em;
+  white-space: nowrap;
+
+}
+
+nav.footer{
+  margin-top: 40px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+nav ul li a:visited {
+  color: black;
+  /* color: #09c; */
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.round {
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
+  border-radius:         5px;
+}
+
+.blogContainer
+{
+	font-size: 14px;
+	padding: 10px;
+	margin: 10px;
+	background-color: orange;
+	width: 760px;
+}

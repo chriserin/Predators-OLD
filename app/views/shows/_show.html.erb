@@ -1,0 +1,13 @@
+		<div>
+
+				<span class="show">*&nbsp;<%= show.showtext %></span>
+
+
+			<% if signed_in? %>
+				<span>
+					<%= link_to "delete", show, :method => :delete,
+											   :confirm => "You sure?" %>
+				</span>
+				
+			<% end %>
+		</div>
