@@ -15,11 +15,11 @@ class Show < ActiveRecord::Base
   class << self 
   
     def next_show()
-      Show.where("showdate > ?", DateTime.now.next_day(-1)).order("showdate ASC").first      
+      Show.where("showdate > ?", Date.today.yesterday).order("showdate ASC").first      
     end    
   
     def upcoming_shows()
-      Show.where("showdate > ?", DateTime.now.next_day(-1)).order("showdate ASC")    
+      Show.where("showdate > ?", Date.today.yesterday).order("showdate ASC")    
     end
     
     def past_shows()
