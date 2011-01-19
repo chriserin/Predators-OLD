@@ -63,7 +63,6 @@ class Show < ActiveRecord::Base
             end
           end
         rescue
-          puts $!
           retry unless formats.size == 0
         end
       end

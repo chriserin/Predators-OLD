@@ -27,9 +27,9 @@ def make_shows
                        :password => "foobar",
                        :password_confirmation => "foobar")
   admin.toggle!(:admin)
-    99.times do |n|
+  99.times do |n|
     showtext = Faker::Lorem.sentence(10)
-	Show.new_from_post("show " + Date.today.next_day(n - 50).strftime('%m/%d/%y') + " " + showtext).save
+	Show.new_from_post("show " + (Date.today + (n - 50)).strftime('%m/%d/%y') + " " + showtext).save
   end
 end
 
