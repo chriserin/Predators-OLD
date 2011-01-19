@@ -1,8 +1,12 @@
 
 body{
-	background-color: #BFDAD7;
+	background-color: #333333;
 	font-family:"Courier New",Times,serif;
 	height: 100%;
+}
+
+body.home_page{
+	color: white;
 }
 
 .leftside {
@@ -106,7 +110,7 @@ body{
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.6);
-	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.6);
+	/*-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.6);*/
 	display: inline-block;
 }
 
@@ -145,6 +149,21 @@ a:hover {
 
 .BandName{
 	font-size: 40px;
+	color: white
+}
+
+
+a.BandName{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+	color: orange;
+}
+
+.dashHeading{
+	color: #99CCFF;
 }
 
 .container {
@@ -172,8 +191,6 @@ a:hover {
   padding: 10px;
 }
 
-
-
 .show{
 	margin: 5px;
 }
@@ -182,7 +199,6 @@ a:hover {
 nav {
   padding: 0 0.7em;
   white-space: nowrap;
-
 }
 
 nav.footer{

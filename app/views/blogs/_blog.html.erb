@@ -1,5 +1,15 @@
-			<div class="blogContainer round">
-				<article>
-					<%= blog.blogtext %>
-				</article>
-			</div>
+<div class="blogContainer round">
+	<article>
+		<%= blog.blogtext %>
+	</article>
+	
+	<span>
+		<% if signed_in? %>
+			<span>
+				<%= link_to "delete", blog, :method => :delete,
+										   :confirm => "You sure?" %>
+			</span>
+			
+		<% end %>
+	</span>
+</div>

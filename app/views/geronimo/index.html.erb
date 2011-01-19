@@ -5,11 +5,11 @@
 	<title>Geronimo!</title>
 	<%= stylesheet_link_tag 'geronimo', :media => 'screen' %>	
 </head>
-<body>
+<body class="home_page">
 <span class="BandImages">
 	<% if @next_show %>
 		<div class="NextShow">Next Show: <%= @next_show.showtext %></div>
-		<div class="AllShows"><%= link_to 'all shows', shows_path%></div>
+		<div class="AllShows"><%= link_to 'all shows', all_shows_path%></div>
 	<% end %>
 	<span class="CenterImages">
 		<span class="TriptychContainer">

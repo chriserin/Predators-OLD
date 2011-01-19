@@ -4,11 +4,35 @@ namespace :db do
   desc "Fill database with geronimo sample data"
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
-    make_users
-    make_microposts
-    make_relationships
+	make_blog_posts
+	make_shows
   end
 end
+
+def make_blog_posts
+  admin = User.create!(:name => "Example User",
+                       :email => "example_blog_maker@railstutorial.org",
+                       :password => "foobar",
+                       :password_confirmation => "foobar")
+  admin.toggle!(:admin)
+    99.times do |n|
+    blogtext = Faker::Lorem.sentence(10)
+	admin.blogs.create_with_post("blog " + blogtext)
+  end
+end
+
+def make_shows
+  admin = User.create!(:name => "Example User",
+                       :email => "example_show_maker@railstutorial.org",
+                       :password => "foobar",
+                       :password_confirmation => "foobar")
+  admin.toggle!(:admin)
+    99.times do |n|
+    showtext = Faker::Lorem.sentence(10)
+	Show.new_from_post("show " + Date.today.next_day(n - 50).strftime('%m/%d/%y') + " " + showtext).save
+  end
+end
+
 
 def make_users
   admin = User.create!(:name => "Example User",
