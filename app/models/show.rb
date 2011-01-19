@@ -54,7 +54,7 @@ class Show < ActiveRecord::Base
       
       show_date = nil
       
-      while (not show_date or (show_date < DateTime.now or show_date > DateTime.now.next_year(2))) and formats.size > 0 
+      while (not show_date or (show_date < DateTime.now or show_date > DateTime.now.next_year.next_year)) and formats.size > 0 
         begin
           format = formats.shift(1)[0]
           for r_format in regexpFormats
