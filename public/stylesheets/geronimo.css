@@ -195,6 +195,11 @@ a:hover {
 	margin: 5px;
 }
 
+.show p{
+
+	display: inline;
+}
+
 
 nav {
   padding: 0 0.7em;
@@ -243,4 +248,15 @@ nav ul li a:hover {
 	margin: 10px;
 	background-color: orange;
 	width: 760px;
+}
+
+.blogContainer p
+{
+	display: inline;
+}
+
+.blogContainer h1, h2, h3, h4, h5, h6
+{
+	margin-top: 4px;
+	margin-bottom: 4px;
 }

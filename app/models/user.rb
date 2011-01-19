@@ -65,6 +65,15 @@ class User < ActiveRecord::Base
   def unfollow!(followed)
     relationships.find_by_followed_id(followed).destroy
   end
+  
+  def follow_all
+	User.all.each { |u|
+		if u != self
+			u.follow! (self)
+			self.follow! (u)
+		end
+	}
+  end
 
   class << self
     def authenticate(email, submitted_password)

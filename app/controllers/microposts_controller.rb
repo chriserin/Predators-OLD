@@ -5,7 +5,8 @@ class MicropostsController < ApplicationController
   def create
     success_message = "Micropost created!"
     @micropost = current_user.microposts.build(params[:micropost])
-    
+    puts params[:micropost]
+	
     if Blog.is_blog_post? params[:micropost][:content]
       current_user.blogs.create_with_post params[:micropost][:content]
       success_message = "Blog created!"

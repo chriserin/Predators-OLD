@@ -11,9 +11,16 @@
 #  updated_at :datetime
 #
 
+require 'maruku'
+
 class Blog < ActiveRecord::Base
 
   belongs_to :user
+  
+  def to_html
+	doc = Maruku.new(blogtext)
+	doc.to_html
+  end  
   
   class << self 
 	def latest_for_frontpage
@@ -32,14 +39,8 @@ class Blog < ActiveRecord::Base
 	  end
 	end
 	
-	def get_blog_text(post)
-	  post_array = post.split()
-	  if(is_front_page? post)
-		post_array.shift(2)
-	  else
-		post_array.shift(1)
-	  end
-	  post_array.join(' ')
+	def get_blog_text(post)	
+		post.gsub(/blog\sfrontpage\s|blog\s/, '')
 	end
 	  
 	def is_blog_post?(post)

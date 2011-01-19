@@ -12,6 +12,12 @@
 
 class Show < ActiveRecord::Base
 
+
+  def to_html
+	doc = Maruku.new(showtext)
+	doc.to_html
+  end
+
   class << self 
   
     def next_show()
@@ -74,9 +80,7 @@ class Show < ActiveRecord::Base
     end
 	
     def get_show_text(post)
-      post_array = post.split()
-        post_array.shift(1)
-      post_array.join(' ')	      
+		post.gsub(/^show\s/,'')
     end
   end
 end
