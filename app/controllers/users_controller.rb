@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def new
+	redirect_to root_path unless signed_in?
     @user  = User.new
     @title = "Sign up"
   end
@@ -36,9 +37,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
+      #sign_in @user
 	  @user.follow_all
-      redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }	  
+      redirect_to users_path, :flash => { :success => "#{@user.name} created" }	  
     else
       @title = "Sign up"
       render 'new'

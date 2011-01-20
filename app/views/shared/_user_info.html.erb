@@ -8,4 +8,12 @@
       <%= pluralize(current_user.microposts.count, "micropost") %>
     </span>
   </a>
+  	  <strong>Instructions</strong>
+	  <div>
+		<p>To create a show type:  show -text that describes show-</p>
+		<p>Use a date format you are comfortable with and the show will be placed in the correct order</p>
+		<p>To create a blog:  blog -blog text-</p>
+		<p>To place the blog on the frontpage: blog frontpage -blog text-</p>
+		<p>For either a show or a blog, you can use the markdown language to add formatting (bold text, links, etc.).  The syntax for markdown can be found <a href="http://daringfireball.net/projects/markdown/syntax">here</a></p>
+	  </div>
 </div>
