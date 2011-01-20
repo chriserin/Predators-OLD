@@ -1,5 +1,11 @@
 class GeronimoController < ApplicationController
 
+  def everything
+    @page_name = "Everything"
+    render :layout => 'g_application'
+  end
+
+
   def index
     blog = Blog.latest_for_frontpage
     @latest_front_page_blogpost = blog ? blog.blogtext : "Nothing to say"    

@@ -147,6 +147,22 @@ a:hover {
 	color: orange;
 }
 
+
+a.BioLink{
+  color:  #CD0000;
+  text-decoration: none;
+}
+
+a.BioLink:visited {
+  color: #CD0000;
+  text-decoration: none;
+}
+
+a.BioLink:hover {
+	color: lightblue;
+	text-decoration: none;
+}
+
 .BandName{
 	font-size: 40px;
 	color: white
@@ -168,6 +184,27 @@ a:hover {
 
 .container {
 	margin: 40px;
+}
+
+.everythingHeader{
+	margin: 20px;
+}
+
+.everythingContainer{
+	padding: 10px;
+	background-color: #FF9966;
+}
+
+.everythingContainerAlt{
+	padding: 10px;
+	background-color: #99FF66;
+}
+
+#EverythingContainer
+{
+	margin: 40px;
+	font-size: 14px;
+	width: 740px;
 }
 
 #ShowsContainer

@@ -14,8 +14,12 @@ SampleApp::Application.routes.draw do
   
   root :to => "geronimo#index"
 
-  match '/blogs',    :to => 'geronimo#blogs'
-  match '/all_shows',    :to => 'geronimo#shows'
+  match "/myspace" => redirect("http://www.myspace.com/thegeronimoband")
+  match "/facebook" => redirect("http://www.facebook.com/thegeronimoband")
+  
+  match '/everything', :to => 'geronimo#everything'
+  match '/blogs',      :to => 'geronimo#blogs'
+  match '/all_shows',  :to => 'geronimo#shows'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
