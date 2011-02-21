@@ -21,6 +21,11 @@ class Micropost < ActiveRecord::Base
   default_scope :order => 'microposts.created_at DESC'
   
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+  
+  def track
+	@track || (@track = Track.new)
+  end
   
   private
   

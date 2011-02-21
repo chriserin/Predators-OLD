@@ -247,3 +247,10 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+#track_chooser
+{
+	position: relative;
+	z-index: -1;
+	margin-top: -40px;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113205037) do
+ActiveRecord::Schema.define(:version => 20110218224101) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(:version => 20110113205037) do
     t.date     "showdate",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.string   "recording_file_name"
+    t.string   "recording_content_type"
+    t.integer  "recording_file_size"
+    t.datetime "recording_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "session_name"
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|

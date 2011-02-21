@@ -5,19 +5,26 @@ class MicropostsController < ApplicationController
   def create
     success_message = "Micropost created!"
 
-	
-    if Blog.is_blog_post? params[:micropost][:content]
-      current_user.blogs.create_with_post params[:micropost][:content]
+	content = params[:micropost][:content]
+    if Blog.is_blog_post? content
+      current_user.blogs.create_with_post content
       success_message = "Blog created!"
-    elsif Show.is_show_post? params[:micropost][:content]
-      new_show = Show.new_from_post params[:micropost][:content]
+    elsif Show.is_show_post? content
+      new_show = Show.new_from_post content
       new_show.save
       success_message = "Show created!"
+	elsif Track.is_track_upload_post? content
+		@track = Track.new(params[:micropost][:track])
+		success_message = "Track uploaded!"
+		@track.session_name = Track.get_session_name(content)
+		@track.name = Track.get_name(content, @track)
+		@track.save
     end
 
 	params[:micropost][:content] = params[:micropost][:content][0..136] + '...'
     @micropost = current_user.microposts.build(params[:micropost])
 	
+
     if @micropost.save
       redirect_to home_path, :flash => { :success =>  success_message}
     else
