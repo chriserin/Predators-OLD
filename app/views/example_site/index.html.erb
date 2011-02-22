@@ -3,10 +3,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Your Band</title>
-	<%= stylesheet_link_tag 'your_style_sheet', :media => 'screen' %>	
+	<%= stylesheet_link_tag 'your_style_sheet', :media => 'screen' %>
+	<%= stylesheet_link_tag 'skin/jplayer.blue.monday', :media => 'screen' %>	
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery.jplayer.min' %>	
 </head>
 <body>
 	This is the example band frontpage
-	<%= audio_tag(@frontpage_audio_url, :autoplay => true, :controls => true) %>
+	<%= render 'tracks/player', :audio_url => @frontpage_audio_url %>
 </body>
 </html>
