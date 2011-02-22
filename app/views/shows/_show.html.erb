@@ -1,13 +1,13 @@
-		<div>
-
-				<span class="show">*&nbsp;<%= raw show.to_html %></span>
 
 
-			<% if signed_in? %>
-				<span>
-					<%= link_to "delete", show, :method => :delete,
-											   :confirm => "You sure?" %>
-				</span>
-				
-			<% end %>
-		</div>
+<span class="show">&nbsp;<%= raw show.to_html %>
+
+
+<% if signed_in? %>
+<span>
+	<%= link_to "delete", show, :method => :delete,
+							   :confirm => "You sure?" %>
+</span>
+
+<% end %>
+</span>

@@ -1,0 +1,4 @@
+			<%= div_for track do %>
+				<%= link_to track.name, track.recording.url, :class => 'audio_link', :id => track.id %>
+				<span class="play_button">play</span>
+			<% end %>

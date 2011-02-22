@@ -4,15 +4,21 @@ $(function(){
 	$("#micropost_content").keypress(function(e){
 		if($("#micropost_content").val() == 'track upload')
 		{
-			document.getElementById("micropost_track_recording").click();
-
+			$("#micropost_track_recording").click();
+			$("#track_chooser").css("z-index", 1);
 		}
 	});
 	
 	$("#micropost_track_recording").bind('change', function(e)
 	{
-		var filename = $("#micropost_track_recording").val().split(/\\/);
-		$("#micropost_content").val($("#micropost_content").val() + filename[2]);
+		var filename = $("#micropost_track_recording").val()
+		if(filename.search(/\\/) > 0)
+		{
+			filename = filename.split(/\\/)[2];
+		}
+		
+		$("#micropost_content").val($("#micropost_content").val() + filename);
+		$("#track_chooser").css("z-index", -1);
 	});
 
 

@@ -2,12 +2,6 @@
 
 <% @tracks_grouped_by_session.each do |session_name, tracks| %>
 	<div>
-		<h3><%= session_name %></h3>
-		<% tracks.each do |track| %>
-			<%= div_for track do %>
-				<%= link_to track.name, track.recording.url, :class => 'audio_link', :id => track.id %>
-				<span class="play_button">play</span>
-			<% end %>
-		<% end %>
+		<%= render 'tracks/track_session', session_name, tracks %>
 	</div>
 <% end %>

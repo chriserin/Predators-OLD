@@ -1,0 +1,12 @@
+<div id="ShowsContainer">
+	<div class="label_font shows_header">Upcoming Shows</div>	
+	<div id="UpcomingShows">
+		<%= render @upcoming_shows %>
+	</div>
+	<% if (@past_shows.count > 0) %>
+	<div class="label_font">Past Shows</div>
+	<div id="PastShows">
+		<%= render @past_shows %>
+	</div>
+	<% end %>
+</div>

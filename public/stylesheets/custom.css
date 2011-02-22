@@ -240,7 +240,7 @@ div.user_info span.microposts {
 }
 
 form.new_micropost {
-  margin-bottom: 2em;
+  margin-bottom: 80px;
 }
 
 form.new_micropost textarea {
@@ -252,5 +252,5 @@ form.new_micropost textarea {
 {
 	position: relative;
 	z-index: -1;
-	margin-top: -40px;
+	margin-top: -80px;
 }

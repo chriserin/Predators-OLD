@@ -10,15 +10,15 @@ class GeronimoController < ApplicationController
     blog = Blog.latest_for_frontpage
     @latest_front_page_blogpost = blog ? blog.blogtext : "Nothing to say"    
     @next_show = Show.next_show
-	@frontpage_audio_url = Track.last.recording.url
-    render 'example_site/index', :layout => false
+	@frontpage_audio_url = Track.last.recording.url unless Track.last.nil?
+    render 'predators/home', :layout => 'simple'
   end
   
   def shows
     @page_name = "Shows"
     @upcoming_shows = Show.upcoming_shows
     @past_shows = Show.past_shows
-    render 'example_site/shows', :layout => 'g_application'
+    render 'predators/shows', :layout => 'g_application'
   end
   
   def blogs
