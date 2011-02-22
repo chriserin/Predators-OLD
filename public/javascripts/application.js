@@ -21,10 +21,11 @@ $(function(){
 		$("#track_chooser").css("z-index", -1);
 	});
 
-
 	$(".play_button").bind('click', function(e){
-		$('audio').audivid("src", $(this).siblings('a').attr("href"));
-		$('audio').audivid("play");		
+		var filename = $(this).siblings('a').attr("href").split(/\?/)[0];
+		alert(filename);
+		$("#jquery_jplayer_1").jPlayer("setMedia", { mp3: filename });
+		$("#jquery_jplayer_1").jPlayer("play");
+		$("#jp_playlist_1").html($(this).siblings('a').text());
 	});	
 });
-
