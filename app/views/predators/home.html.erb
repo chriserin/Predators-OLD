@@ -36,7 +36,7 @@
 	</div>
 	<div>	
 		<div id="next_show">
-			<%= @next_show.showtext %>
+			<%= @next_show.showtext unless @next_show.nil? %>
 		</div>		
 	</div>	
 	<% unless @frontpage_audio_url.nil?%>
