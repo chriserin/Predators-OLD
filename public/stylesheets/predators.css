@@ -364,3 +364,18 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+.jp-audio
+{
+	text-align: center;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	visibility: hidden;
+		
+}
+
+div.jp-interface
+{
+	background-color: #FFF!important;
+}

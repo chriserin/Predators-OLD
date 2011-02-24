@@ -5,12 +5,11 @@ class GeronimoController < ApplicationController
     render 'example_site/everything', :layout => 'g_application'
   end
 
-
   def index
     blog = Blog.latest_for_frontpage
     @latest_front_page_blogpost = blog ? blog.blogtext : "Nothing to say"    
     @next_show = Show.next_show
-	@frontpage_audio_url = Track.last.recording.url unless Track.last.nil?
+	@frontpage_audio_url = Track.where(:frontpage => true).first.recording.url
     render 'predators/home', :layout => 'simple'
   end
   

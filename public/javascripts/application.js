@@ -22,9 +22,28 @@ $(function(){
 	});
 
 	$(".play_button").bind('click', function(e){
+		 
 		var filename = $(this).siblings('a').attr("href").split(/\?/)[0];
-		alert(filename);
-		$("#jquery_jplayer_1").jPlayer("setMedia", { mp3: filename });
+		var extension_array = filename.split(/\./);
+		var extension = extension_array[extension_array.length -1];
+
+		
+ 		if(extension == 'mp3')
+		{
+			$("#jquery_jplayer_1").jPlayer("setMedia", { mp3: filename });		
+			$("#jquery_jplayer_1").jPlayer("supplied", extension);
+		}
+		else if (extension == 'm4a')
+		{
+			$("#jquery_jplayer_1").jPlayer("setMedia", { m4a: filename });		
+			$("#jquery_jplayer_1").jPlayer("supplied", extension);		
+		}
+		else if (extension == 'ogg')
+		{
+			$("#jquery_jplayer_1").jPlayer("setMedia", { ogg: filename });		
+			$("#jquery_jplayer_1").jPlayer("supplied", extension);		
+		}
+
 		$("#jquery_jplayer_1").jPlayer("play");
 		$("#jp_playlist_1").html($(this).siblings('a').text());
 	});	

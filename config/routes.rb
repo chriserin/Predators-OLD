@@ -17,7 +17,8 @@ SampleApp::Application.routes.draw do
 
   match "/myspace" => redirect("http://www.myspace.com/thegeronimoband")
   match "/facebook" => redirect("http://www.facebook.com/thegeronimoband")
-  
+
+  match '/tracks/:id/frontpage', :to => 'tracks#frontpage', :as => 'tracks_frontpage'
   match '/everything', :to => 'geronimo#everything'
   match '/blogs',      :to => 'geronimo#blogs'
   match '/all_shows',  :to => 'geronimo#shows'

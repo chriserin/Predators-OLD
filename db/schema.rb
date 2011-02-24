@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218224101) do
+ActiveRecord::Schema.define(:version => 20110224030948) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20110218224101) do
     t.datetime "updated_at"
     t.string   "session_name"
     t.string   "name"
+    t.boolean  "frontpage",              :default => false
   end
 
   create_table "users", :force => true do |t|

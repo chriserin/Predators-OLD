@@ -38,8 +38,8 @@
 		<div id="next_show">
 			<%= @next_show.showtext %>
 		</div>		
-	</div>
+	</div>	
 	<% unless @frontpage_audio_url.nil?%>
-	<div><%= audio_tag(@frontpage_audio_url, :autoplay => true, :controls => true) %></div>
+		<%= render 'tracks/player', :audio_url => @frontpage_audio_url %>
 	<% end %>
 </div>
