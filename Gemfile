@@ -8,6 +8,7 @@ gem 'maruku'
 gem 'jquery-rails', '>= 0.2.6'
 gem "paperclip", "~> 2.3"
 gem 'aws-s3'
+gem 'faker', '0.3.1'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
