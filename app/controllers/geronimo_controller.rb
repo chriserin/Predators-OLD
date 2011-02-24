@@ -9,7 +9,9 @@ class GeronimoController < ApplicationController
     blog = Blog.latest_for_frontpage
     @latest_front_page_blogpost = blog ? blog.blogtext : "Nothing to say"    
     @next_show = Show.next_show
-	@frontpage_audio_url = Track.where(:frontpage => true).first.recording.url
+	if(Track.where(:frontpage => true).count > 0)
+		@frontpage_audio_url = Track.where(:frontpage => true).first.recording.url
+	end
     render 'predators/home', :layout => 'simple'
   end
   
