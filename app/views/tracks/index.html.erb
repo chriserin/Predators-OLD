@@ -1,13 +1,7 @@
-<%= render 'player' %>
+<%= render 'player', :audio_url => @tracks_grouped_by_session.values.first[0].recording.url, :visibility => 'visible' %>
 
 <% @tracks_grouped_by_session.each do |session_name, tracks| %>
 	<div>
-		<h3><%= session_name %></h3>
-		<% tracks.each do |track| %>
-			<%= div_for track do %>
-				<%= link_to track.name, track.recording.url, :class => 'audio_link', :id => track.id %>
-				<span class="play_button">play</span>
-			<% end %>
-		<% end %>
+		<%= render 'tracks/track_session', :session_name => session_name, :tracks => tracks %>
 	</div>
 <% end %>

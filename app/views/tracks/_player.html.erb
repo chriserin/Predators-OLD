@@ -1,19 +1,25 @@
+<%
+	visibility = 'hidden' if local_assigns[:visibility].nil?
+%>
+
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
-
+	<% file_format = audio_url.split(/\./).last.split(/\?/)[0] %>
 	$("#jquery_jplayer_1").jPlayer({
 		ready: function () {
 			$(this).jPlayer("setMedia", {
-				mp3: "<%= audio_url.split(/\?/)[0] %>"
+				<%= file_format %>: "<%= audio_url.split(/\?/)[0] %>"
 			}).jPlayer("play");
 		},
 		ended: function (event) {
-			$(this).jPlayer("play");
+			//$(this).jPlayer("play");
 		},
-		swfPath: "/javascript",
-		supplied: "mp3"
+		swfPath: "/javascripts",
+		supplied: "<%= file_format %>"
 	});
+	
+	$(".jp-audio").css("visibility", "<%= visibility %>")
 });
 //]]>
 </script>
