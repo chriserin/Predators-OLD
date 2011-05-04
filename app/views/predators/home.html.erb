@@ -1,45 +1,4 @@
-<script>
-
-	var padding_values_initial = [1, 2, 4, 6, 8, 10, 12, 14, 17, 20];
-	var padding_values_r = padding_values_initial.slice(0).reverse();
-	var padding_values_top = padding_values_r.concat([0]).concat(padding_values_initial);
-	var padding_values_bottom = padding_values_initial.concat([22]).concat(padding_values_r);
-	
-	$(function(){
-		$("#upperjaw .tooth:first").css("padding-top", padding_values_top[20] * 4)
-		for(var i = 0; i < 20; i++)
-			$("#upperjaw .tooth:first").clone().insertAfter("#upperjaw .tooth:first").css("padding-top", 4 * padding_values_top[i]);
-
-		for(var j = 0; j < 20; j++)
-			$("#lowerjaw .tooth:first").clone().insertAfter("#lowerjaw .tooth:first").css("padding-top", 4 * padding_values_bottom[j]);
-	
-	});
-</script>
-<div id="wrapper">
-	<div id="teeth">
-		<div id="upperjaw">
-			<div class="tooth">
-				<div class="root"></div>
-				<div class="tip"></div>
-			</div>			
-		</div>
-		<div id="lowerjaw">
-			<div class="tooth">
-				<div class="tip"></div>
-				<div class="root"></div>
-			</div>
-		</div>
-	</div>
-
-	<div id="title" class="curtis tk_proxima_nova size140 standard">
-		<%= render('shared/title') %>
-	</div>
-	<div>	
-		<div id="next_show">
-			<%= raw @next_show.to_html unless @next_show.nil?  %>
-		</div>		
-	</div>	
-	<% unless @frontpage_audio_url.nil?%>
-		<%= render 'tracks/player', :audio_url => @frontpage_audio_url %>
-	<% end %>
-</div>
+<%= render 'predators/player' %>
+<%= render 'predators/poster' %>
+<%= render 'predators/blogs' %>
+<%= render 'predators/pictures' %>

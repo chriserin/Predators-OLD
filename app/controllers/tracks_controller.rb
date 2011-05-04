@@ -13,8 +13,8 @@ class TracksController < ApplicationController
 	
 	def frontpage
 		track = Track.find(params[:id])
-		frontpage_tracks = Track.where(:frontpage => true)
-		frontpage_tracks.first.toggle!(:frontpage) unless frontpage_tracks.count == 0
+		#frontpage_tracks = Track.where(:frontpage => true)
+		#frontpage_tracks.first.toggle!(:frontpage) unless frontpage_tracks.count == 0
 		track.toggle!(:frontpage)	
 		redirect_to :tracks
 	end

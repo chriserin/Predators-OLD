@@ -38,7 +38,16 @@ $(function(){
 		$("#micropost_content").val($("#micropost_content").val() + filename);
 		$("#picture_chooser").css("z-index", -1);
 	});	
+	
+	$("#play_control").bind('click', function(){
+		$("#jquery_jplayer_1").jPlayer("play");
+	});
 
+	$("#pause_control").bind('click', function(){
+		$("#jquery_jplayer_1").jPlayer("pause");
+	});	
+	
+	
 	$(".play_button").bind('click', function(e){
 		 
 		var filename = $(this).siblings('a').attr("href").split(/\?/)[0];
@@ -65,4 +74,6 @@ $(function(){
 		$("#jquery_jplayer_1").jPlayer("play");
 		$("#jp_playlist_1").html($(this).siblings('a').text());
 	});	
+	
+	$(".circle").animate({ borderTopColor: '#EAFF00', borderLeftColor: '#EAFF00', borderRightColor: '#EAFF00', borderBottomColor: '#EAFF00' }, 'slow');
 });

@@ -1,5 +1,5 @@
 <%
-	visibility = 'hidden' if local_assigns[:visibility].nil?
+	visibility = 'none' if local_assigns[:visibility].nil?
 %>
 
 <script type="text/javascript">
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		supplied: "<%= file_format %>"
 	});
 	
-	$(".jp-audio").css("visibility", "<%= visibility %>")
+	$(".jp-audio").css("display", "<%= visibility %>")
 });
 //]]>
 </script>

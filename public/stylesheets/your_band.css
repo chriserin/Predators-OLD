@@ -13,12 +13,7 @@ audio
 img 
 {
 	margin: 10px;
-	-moz-box-shadow: 0 0 20px 5px green;
-	-webkit-box-shadow: 0 0 20px 5px green;
-	box-shadow: 0 0 20px 5px green;
-}
-
-body
-{
-	background-color: red;
+	-moz-box-shadow: 0 0 20px 5px #A3DC55;
+	-webkit-box-shadow: 0 0 20px 5px #A3DC55;
+	box-shadow: 0 0 20px 5px #A3DC55;
 }

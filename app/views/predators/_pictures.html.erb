@@ -1,0 +1,15 @@
+<div id="pictures" class="front_page_section">
+	<div id="picture_wrapper">
+	<% @pictures.each do |picture| %>
+		<%= image_tag picture.image.url %>
+	<% end %>
+	</div>
+
+	<script type="text/javascript">
+
+	$(window).load(function(){
+		$('#picture_wrapper').masonry({ columnWidth: 25, saveOptions: false, animate: true });
+	});
+
+	</script>
+</div>

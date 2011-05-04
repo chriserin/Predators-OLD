@@ -379,3 +379,122 @@ div.jp-interface
 {
 	background-color: #FFF!important;
 }
+
+.front_page_section
+{
+	/*height: 20px;*/
+}
+
+#pictures
+{
+	background-color: rgba(255, 50, 50, 1.0);
+}
+
+#blogs_wrapper
+{
+	background-color: #1C3C0E;
+	color: white;
+}
+
+#player_wrapper
+{
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;	
+	position: relative;
+}
+
+#pause_control
+{
+	
+}
+
+#play_control
+{
+
+}
+
+.eye
+{
+	height: 108px;
+	width: 166px;
+	position: absolute;
+	background-color: rgba(0, 200, 0, .0);
+}
+
+.eyeContainer
+{
+	height: 54px;
+	width: 166px;
+	background-color: rgba(200, 0, 0, .0);
+	overflow: hidden;
+}
+
+.circle
+{
+	border-color: rgba(255, 255, 0, 0.7);
+	border-width: 90px;
+	border-radius: 108px 108px;
+	-moz-border-radius: 108px 108px;
+	-webkit-border-radius: 108px 108px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	position: relative;
+	z-index: 10;
+}
+
+.eyetop
+{
+	left: -7px;
+	top: 0px;
+}
+
+.eyebottom
+{
+	left: -7px;
+	top: -126px;	
+}
+
+.playGraphic
+{
+	border-left-color: black;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	left: 65px;
+	top: 20px;
+	border-right-width: 0px;
+	border-top-width: 34px;
+	border-bottom-width: 34px;
+	border-left-width: 52px;
+	z-index: 15;
+	position: absolute;
+	height: 0px;
+	width: 0px;
+	border-style: solid;	
+}
+
+.stopGraphic
+{
+	left: 53px;
+	top: 22px;
+	background-color: black;
+	height: 60px;
+	width: 60px;
+	z-index: 15;
+	position: absolute;
+}
+
+.leftEye
+{
+	margin-left: -60px;
+}
+
+.rightEye
+{
+	top: 0px;
+	right: 0px;
+	margin-right: -60px;
+}
+
