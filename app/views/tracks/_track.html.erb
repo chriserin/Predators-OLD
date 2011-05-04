@@ -1,5 +1,8 @@
+		<% if signed_in? or track.public? %>	
 			<%= div_for track do %>
 				<%= link_to track.name, track.recording.url, :class => 'audio_link', :id => track.id %>
 				<span class="play_button">play</span>
-				<span><%= link_to 'frontpage', tracks_frontpage_path(track.id) %></span>				
+				<span><%= link_to 'frontpage', tracks_frontpage_path(track.id) unless not signed_in? %></span>
+				<span><%= get_track_status_action(track) %></span>
 			<% end %>
+		<% end %>

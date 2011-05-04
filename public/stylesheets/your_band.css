@@ -9,3 +9,16 @@ audio
 	border-style: solid;
 	border-width: 5px;
 }
+
+img 
+{
+	margin: 10px;
+	-moz-box-shadow: 0 0 20px 5px green;
+	-webkit-box-shadow: 0 0 20px 5px green;
+	box-shadow: 0 0 20px 5px green;
+}
+
+body
+{
+	background-color: red;
+}

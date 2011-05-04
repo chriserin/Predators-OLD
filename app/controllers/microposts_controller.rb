@@ -19,6 +19,12 @@ class MicropostsController < ApplicationController
 		@track.session_name = Track.get_session_name(content)
 		@track.name = Track.get_name(content, @track)
 		@track.save
+	elsif Picture.is_picture_upload_post? content
+		@picture = Picture.new(params[:micropost][:picture])
+		success_message = "Picture uploaded!"
+		@picture.session_name = Picture.get_session_name(content)
+		@picture.name = Picture.get_name(content, @picture)
+		@picture.save		
     end
 
 	params[:micropost][:content] = params[:micropost][:content][0..136] + '...'

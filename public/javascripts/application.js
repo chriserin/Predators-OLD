@@ -4,8 +4,14 @@ $(function(){
 	$("#micropost_content").keypress(function(e){
 		if($("#micropost_content").val() == 'track upload')
 		{
-			$("#micropost_track_recording").click();
+			document.getElementById("micropost_track_recording").click();
 			$("#track_chooser").css("z-index", 1);
+		}
+		
+		if($("#micropost_content").val() == 'picture upload')
+		{
+			document.getElementById("micropost_picture_image").click();	
+			$("#picture_chooser").css("z-index", 1);
 		}
 	});
 	
@@ -16,10 +22,22 @@ $(function(){
 		{
 			filename = filename.split(/\\/)[2];
 		}
-		
+
 		$("#micropost_content").val($("#micropost_content").val() + filename);
 		$("#track_chooser").css("z-index", -1);
 	});
+	
+	$("#micropost_picture_image").bind('change', function(e)
+	{
+		var filename = $("#micropost_picture_image").val();
+		if(filename.search(/\\/) > 0)
+		{
+			filename = filename.split(/\\/)[2];
+		}		
+		
+		$("#micropost_content").val($("#micropost_content").val() + filename);
+		$("#picture_chooser").css("z-index", -1);
+	});	
 
 	$(".play_button").bind('click', function(e){
 		 
