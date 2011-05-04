@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224030948) do
+ActiveRecord::Schema.define(:version => 20110503191359) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(:version => 20110224030948) do
   end
 
   add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
+
+  create_table "pictures", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "session_name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -59,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20110224030948) do
     t.string   "session_name"
     t.string   "name"
     t.boolean  "frontpage",              :default => false
+    t.boolean  "public"
   end
 
   create_table "users", :force => true do |t|

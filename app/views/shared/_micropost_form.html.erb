@@ -10,5 +10,10 @@
 	<div class="file_field" id="track_chooser">
 		<%= track_form.file_field :recording %>
 	</div>
+  <% end %>
+  <%= f.fields_for @micropost.picture do |picture_form| %>
+	<div class="file_field" id="picture_chooser">
+		<%= picture_form.file_field :image %>
+	</div>
   <% end %>  
 <% end %>

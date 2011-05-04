@@ -26,6 +26,10 @@ class Micropost < ActiveRecord::Base
   def track
 	@track || (@track = Track.new)
   end
+
+  def picture
+	@picture || (@picture = Picture.new)
+  end
   
   private
   

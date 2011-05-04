@@ -1,0 +1,15 @@
+This is the pictures index.
+
+<div id="wrapper">
+<% @pictures.each do |picture| %>
+	<%= image_tag picture.image.url %>
+<% end %>
+</div>
+
+<script type="text/javascript">
+
+$(window).load(function(){
+	$('#wrapper').masonry({ columnWidth: 25, saveOptions: false, animate: true });
+});
+
+</script>

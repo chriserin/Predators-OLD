@@ -17,5 +17,17 @@ class TracksController < ApplicationController
 		frontpage_tracks.first.toggle!(:frontpage) unless frontpage_tracks.count == 0
 		track.toggle!(:frontpage)	
 		redirect_to :tracks
+	end
+
+	def makepublic
+		track = Track.find(params[:id])
+		track.toggle!(:public)	
+		redirect_to :tracks
+	end
+
+	def makeprivate
+		track = Track.find(params[:id])
+		track.toggle!(:public)	
+		redirect_to :tracks
 	end	
 end
