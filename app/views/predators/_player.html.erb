@@ -5,26 +5,8 @@
 			<%= render 'tracks/player', :audio_url => @frontpage_audio_url %>
 		<% end %>
 		
-<div class="eye leftEye play_button" id="play_control">
-	<div class="eyeContainer">
-		<div class="circle eyetop"></div>
-	</div>
-	<div class="eyeContainer">
-		<div class="circle eyebottom"></div>				
-	</div>	
-	<div class="playGraphic"></div>	
-</div>
 <div id="tracks_wrapper">
 	<%= render @tracks unless @tracks.nil? %>
-</div>
-<div class="eye rightEye play_button" id="pause_control">
-	<div class="eyeContainer">
-		<div class="circle eyetop"></div>
-	</div>
-	<div class="eyeContainer">
-		<div class="circle eyebottom"></div>				
-	</div>	
-	<div class="stopGraphic"></div>	
 </div>
 
 </div>

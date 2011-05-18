@@ -47,8 +47,11 @@ $(function(){
 		$("#jquery_jplayer_1").jPlayer("pause");
 	});	
 	
+	$(".stop_action").bind('click', function(){
+		$("#jquery_jplayer_1").jPlayer("pause");
+	});	
 	
-	$(".play_button").bind('click', function(e){
+	$(".play_action").bind('click', function(e){
 		 
 		var filename = $(this).siblings('a').attr("href").split(/\?/)[0];
 		var extension_array = filename.split(/\./);

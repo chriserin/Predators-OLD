@@ -1,0 +1,262 @@
+<style>
+
+	.eye
+	{
+		height: 108px;
+		width: 166px;
+		position: absolute;
+		background-color: rgba(0, 200, 0, .0);
+	}
+	
+	.eyeContainer
+	{
+		height: 54px;
+		width: 166px;
+		background-color: rgba(200, 0, 0, .0);
+		overflow: hidden;
+	}
+	
+	.irisContainer
+	{
+		background-color: rgba(200, 0, 0, .0);
+		height: 108px;
+		width: 40px;
+		top: 0px;
+		position: absolute;
+		overflow: hidden;		
+	}
+	
+	.irisContLeft
+	{
+		left: 44px;
+	}
+	
+	.irisContRight
+	{
+		left: 84px;
+	}	
+	
+	.iris
+	{
+		border-color: rgba(0, 255, 0, .5);
+		border-width: 85px;
+		border-radius: 85px;
+		z-index: 20;
+		position: relative;
+		height: 0px;
+		width: 0px;
+		border-style: solid;
+		top: -30px;
+	}
+	
+	.blackeye
+	{
+		border-color: black;/*rgba(80, 0, 0, .48);*/
+		border-width: 100px;
+		border-radius: 100px;
+		z-index: 12;
+		position: relative;
+		height: 0px;
+		width: 0px;
+		border-style: solid;
+		top: -45px;
+	}
+	
+	.irisLeft
+	{
+		left: 20px;
+
+	}
+	
+	.irisRight
+	{
+		left: -150px;
+	}
+
+	.blackeyeRight
+	{
+		left: -180px;
+	}
+	
+	.circle
+	{
+		border-color: rgba(255, 0, 0, .7);
+		border-width: 90px;
+		border-radius: 108px 108px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		position: relative;
+		z-index: 10;
+	}
+
+	.redCircle
+	{
+		border-color: rgba(255, 255, 0, 0.65);
+		border-width: 80px;
+		border-radius: 108px 108px;
+		width: 20px;
+		height: 0px;
+		border-style: solid;
+		position: relative;
+		z-index: 15;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+	}
+	
+	.eyetop
+	{
+		left: -7px;
+		top: 0px;
+	}
+	
+	.eyebottom
+	{
+		left: -7px;
+		top: -126px;	
+	}
+	
+	.rightEye
+	{
+		float: right;
+		display: inline;
+		left: 260px;
+		/*-webkit-transform:rotate(-4deg);
+		-moz-transform:rotate(-4deg);*/	
+	}
+	
+	.leftEye
+	{
+		/*-webkit-transform:rotate(-176deg);
+		-moz-transform:rotate(-176deg);*/
+	}	
+	
+	.roundIris
+	{
+		border-color: rgba(0, 0, 0, .4);
+		border-width: 20px;
+		border-radius: 20px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		position: absolute;
+		z-index: 30;
+		top: 34px;
+		left: 64px;
+	}
+	
+	.whiteIris
+	{
+		border-color: rgba(255, 255, 255, .2);
+		border-width: 17px;
+		border-radius: 17px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		position: absolute;
+		z-index: 30;
+		top: 37px;
+		left: 67px;
+	}
+
+	.blackEyeRight
+	{
+		left: -180px;
+	}	
+
+	#menu_wrapper
+	{
+		width: 100%;	
+		background-color: black;
+	}
+	
+	#menu_eyes
+	{
+		height: 128px;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -55px;
+		width: 426px;
+	}
+
+	.menu_link
+	{
+		color: lightblue;
+		display: block;
+		top: 40px;
+		position: relative;
+		margin-left: auto;
+	}
+	
+</style>
+<div id="menu_wrapper">
+	<div class="menu_link">predators</div>	
+	<div class="menu_link">contact</div>
+	<div class="menu_link">other</div>
+	<div class="menu_link">shows</div>
+	<div id="menu_eyes">	
+		<div class="eye rightEye">
+			<div class="eyeContainer">
+				<div class="redCircle eyetop"></div>
+			</div>
+			<div class="eyeContainer">
+				<div class="redCircle eyebottom"></div>				
+			</div>
+			<div class="roundIris"></div>
+			<div class="whiteIris"></div>		
+		</div>
+		<div class="eye leftEye">
+			<div class="eyeContainer">
+				<div class="redCircle eyetop"></div>
+			</div>
+			<div class="eyeContainer">
+				<div class="redCircle eyebottom"></div>				
+			</div>
+			<div class="roundIris"></div>
+			<div class="whiteIris"></div>		
+		</div>	
+		<div class="eye leftEye">
+			<div class="eyeContainer">
+				<div class="circle eyetop"></div>
+			</div>
+			<div class="eyeContainer">
+				<div class="circle eyebottom"></div>				
+			</div>	
+			<div class="irisContainer irisContLeft">
+				<div class="iris irisLeft"></div>
+			</div>
+			<div class="irisContainer irisContRight">
+				<div class="iris irisRight"></div>
+			</div>
+			<div class="irisContainer irisContLeft">
+				<div class="irisLeft blackeye"></div>
+			</div>
+			<div class="irisContainer irisContRight">
+				<div class="blackEyeRight blackeye"></div>
+			</div>
+		</div>
+		<div class="eye rightEye">	
+			<div class="eyeContainer">
+				<div class="circle eyetop"></div>
+			</div>
+			<div class="eyeContainer">
+				<div class="circle eyebottom"></div>				
+			</div>		
+			<div class="irisContainer irisContLeft">
+				<div class="iris irisLeft"></div>
+			</div>
+			<div class="irisContainer irisContRight">
+				<div class="iris irisRight"></div>
+			</div>
+			<div class="irisContainer irisContLeft">
+				<div class="irisLeft blackeye"></div>
+			</div>
+			<div class="irisContainer irisContRight">
+				<div class="blackEyeRight blackeye"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
