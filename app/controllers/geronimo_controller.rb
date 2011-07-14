@@ -29,4 +29,8 @@ class GeronimoController < ApplicationController
     @blogs = Blog.order("created_at DESC")
     render 'example_site/blogs', :layout => 'g_application'    
   end
+
+  def aug17
+    render 'predators/aug17', :layout => 'poster_aug17'
+  end
 end

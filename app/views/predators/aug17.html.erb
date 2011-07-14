@@ -1,0 +1,237 @@
+<style>
+  #poster
+  {
+    background-color: lightblue;
+    position: relative;
+    margin: 0 auto;
+    height: 900px;
+    width: 900px;
+  }
+
+  body{
+    background-color: lightblue;
+    text-align: center;
+  }
+
+  .eye
+  {
+    height: 0px;
+    width: 0px;
+    border-width: 180px 50px 0px 50px;
+    border-color: grey transparent transparent transparent;
+    border-style: solid;
+    border-radius: 30px;
+    margin-top: 100px;
+    position: relative;
+  }
+
+  #left_eye
+  {
+    float: left;
+    margin-left: 28%;
+  }
+
+  #right_eye
+  {
+    float: right;
+    margin-right: 28%;
+  }
+
+  #teeth
+  {
+    width: 100%;
+    height: 300px;
+    float: left;
+    margin: 0 auto;
+    margin-top: 380px;
+    position: relative;
+    margin-top: 25px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .fang
+  {
+    height: 0px;
+    width: 0px;
+    border-width: 0px 20px 180px 20px;
+    border-color: transparent transparent green transparent;
+    border-style: solid;
+  }
+
+  .incisor
+  {
+    height: 0px;
+    width: 0px;
+    border-width: 0px 10px 80px 10px;
+    border-color: transparent transparent green transparent;
+    border-style: solid;
+  }
+
+  .top_incisor
+  {
+    border-top-width: 140px;
+    border-bottom-width: 0px;
+    border-top-color: green;
+    border-bottom-color: transparent;
+    margin-top: -10px;
+    z-index: 0;
+    position: relative;
+  }
+
+  #top_teeth
+  {
+    position: relative;
+    margin: 0 auto;
+    height: 180px;
+    width: 84px;
+  }
+
+  .right_tooth
+  {
+    float: right;
+    margin-right: 26%;
+  }
+
+  .left_tooth
+  {
+    float: left;
+    margin-left: 26%;
+  }
+
+  .tooth
+  {
+
+  }
+
+  .gum
+  {
+    height: 120px;
+    width: 40px;
+    border-radius: 40px;
+    
+    background-color: brown;
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+
+  .small_tooth
+  {
+    float: left;
+    margin: 0 10px;
+    margin-top: 140px;
+  }
+
+  .small_tooth:nth-child(6), .small_tooth:nth-child(7)
+  {
+    margin-top: 200px;
+  }
+
+  .small_tooth:nth-child(5), .small_tooth:nth-child(8)
+  {
+    margin-top: 180px;
+  }
+
+  .small_tooth:nth-child(4), .small_tooth:nth-child(9)
+  {
+    margin-top: 160px;
+  }
+
+  .small_tooth:nth-child(3)
+  {
+    margin-left: 20px;
+  }
+
+  .small_gum
+  {
+    height: 60px;
+    width: 24px;
+    border-radius: 8px;
+    
+    background-color: brown;
+    margin-left: -2px;
+    margin-top: -6px;
+    z-index: 5;
+    position: relative;
+  }
+
+  .top_tooth
+  {
+    margin-top: 400px;
+    position: absolute;
+  }
+
+  .top_tooth:nth-child(2)
+  {
+    left: -13px;
+  }
+
+  .top_tooth:nth-child(1)
+  {
+    left: 60px;
+  }
+
+  .whole_gum
+  {
+     background-color: pink;
+     opacity: .0;
+     height: 160px;
+     position: absolute;
+     width: 700px;
+     left: 10%;
+     border-radius: 80px;
+     bottom: 32%; 
+  }
+
+  .pupil
+  {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    position: absolute;
+    overflow: visible;
+    background-color: red;
+    top: -80px;
+    left: -20px;
+    box-shadow: 0 0 10px 10px red;
+  }
+
+  #show_text
+  {
+    font-family: 'Nova Square', cursive;
+    font-size: 30px;
+  }
+
+</style>
+<div id="poster">
+<div id="eyes"><div id="left_eye" class="eye"><div class="pupil"></div></div><div id="right_eye" class="eye"><div class="pupil"></div></div></div>
+<div id="top_teeth">
+  <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
+  <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
+</div>
+<div id="teeth">
+  <div class="whole_gum"></div>
+  <div class="left_tooth"><div id="left_fang" class="fang"></div><div class="gum"></div></div>
+  <div class="small_tooth"><div id="right_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
+  <div class="right_tooth"><div id="right_fang" class="fang"></div><div class="gum"></div></div>
+</div>
+<div id="show_text">
+<div>GrandFather</div>
+<div>Geronimo</div>
+<div>Predators</div>
+<div>&nbsp;</div>
+<div>SUBTERRAINEAN</div>
+<div>AUG17 9PM</div>
+</div>
+
+
+</div>

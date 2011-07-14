@@ -25,6 +25,7 @@ SampleApp::Application.routes.draw do
   match '/everything', :to => 'geronimo#everything'
   match '/blogs',      :to => 'geronimo#blogs'
   match '/all_shows',  :to => 'geronimo#shows'
+  match '/aug17',   :to => 'geronimo#aug17'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
