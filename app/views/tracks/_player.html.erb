@@ -12,9 +12,6 @@ $(document).ready(function(){
 				<%= file_format %>: "<%= audio_url.split(/\?/)[0] %>"
 			}).jPlayer("play");
 		},
-		ended: function (event) {
-			//$(this).jPlayer("play");
-		},
 		swfPath: "/javascripts",
 		supplied: "<%= file_format %>"
 	});

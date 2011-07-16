@@ -1,7 +1,74 @@
+<script type="text/javascript">
+var currentTrack = 'Grandfather'
+$(function(){
+
+  $("#jquery_jplayer_1").bind($.jPlayer.event.ended + '.playNext', function(){
+    var filename = getNextSong();
+    playSong(filename);  
+  });
+ 
+  $(".play_action").bind('click', function(e){
+           
+      var filename = $(this).attr("mp3");
+      playSong(filename);
+  });	
+
+  togglePupilBright()
+
+});
+
+function togglePupilBright()
+{
+    $(".pupil").toggleClass("pupil_bright")
+    setTimeout(
+      "togglePupilBright()", 2500
+    );
+}
+
+function getNextSong()
+{
+  if(currentTrack.indexOf('Grandfather') >= 0)
+    return 'https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3';
+  else if(currentTrack.indexOf('Geronimo') >= 0)
+    return 'http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3';
+  else
+    return 'https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3';
+}
+
+
+function playSong(filename)
+{
+
+    var extension_array = filename.split(/\./);
+    var extension = extension_array[extension_array.length -1];
+    currentTrack = filename;
+    
+    if(extension == 'mp3')
+    {
+            $("#jquery_jplayer_1").jPlayer("setMedia", { mp3: filename });		
+            $("#jquery_jplayer_1").jPlayer("supplied", extension);
+    }
+    else if (extension == 'm4a')
+    {
+            $("#jquery_jplayer_1").jPlayer("setMedia", { m4a: filename });		
+            $("#jquery_jplayer_1").jPlayer("supplied", extension);		
+    }
+    else if (extension == 'ogg')
+    {
+            $("#jquery_jplayer_1").jPlayer("setMedia", { ogg: filename });		
+            $("#jquery_jplayer_1").jPlayer("supplied", extension);		
+    }
+
+    $("#jquery_jplayer_1").jPlayer("play");
+}
+
+
+
+</script>
 <style>
   #poster
   {
-    background-color: lightblue;
+    background-color: black;
     position: relative;
     margin: 0 auto;
     height: 900px;
@@ -9,22 +76,20 @@
   }
 
   body{
-    background-color: lightblue;
+    background-color: black;
     text-align: center;
   }
 
   .eye
   {
-    height: 0px;
-    width: 0px;
-    border-width: 180px 50px 0px 50px;
-    border-color: grey transparent transparent transparent;
-    border-style: solid;
+    height: 180px;
+    width: 100px;
     border-radius: 30px;
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     margin-top: 100px;
     position: relative;
+    background-color: black;
   }
 
   #left_eye
@@ -59,7 +124,7 @@
     height: 0px;
     width: 0px;
     border-width: 0px 20px 180px 20px;
-    border-color: transparent transparent green transparent;
+    border-color: transparent transparent white transparent;
     border-style: solid;
   }
 
@@ -68,7 +133,7 @@
     height: 0px;
     width: 0px;
     border-width: 0px 10px 80px 10px;
-    border-color: transparent transparent green transparent;
+    border-color: transparent transparent white transparent;
     border-style: solid;
   }
 
@@ -76,7 +141,7 @@
   {
     border-top-width: 140px;
     border-bottom-width: 0px;
-    border-top-color: green;
+    border-top-color: white;
     border-bottom-color: transparent;
     margin-top: -10px;
     z-index: 0;
@@ -116,7 +181,7 @@
     -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
     
-    background-color: brown;
+    background-color: #d690c0;
     margin-left: 0px;
     margin-top: -20px;
   }
@@ -156,7 +221,7 @@
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     
-    background-color: brown;
+    background-color: #d690c0;
     margin-left: -2px;
     margin-top: -6px;
     z-index: 5;
@@ -193,6 +258,7 @@
      bottom: 32%; 
   }
 
+
   .pupil
   {
     height: 40px;
@@ -204,9 +270,63 @@
     position: absolute;
     overflow: visible;
     background-color: red;
-    top: -80px;
-    left: -20px;
     box-shadow: 0 0 10px 10px red;
+    z-index: 25;
+    top: 100px;
+    left: 30px;
+
+    -webkit-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -ms-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
+
+    -webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -moz-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -ms-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -o-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
+    opacity: 0;
+  }
+
+  .pupil_bright
+  {
+    opacity: 1;
+  }
+
+  .bomb
+  {
+    background-color: grey;
+    opacity: .5;
+  }  
+
+  .bomb_ball
+  {
+    width: 100px;
+    height: 120px;
+    border-radius: 100px;
+    position: absolute;
+    top: 60px;  
+  }
+
+  .bomb_stem
+  {
+    height: 110px;
+    width: 40px;
+    position:absolute;
+    left: 30px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 14px;
+  }
+
+  .bomb_tail
+  {
+    height: 0px;
+    width: 0px;
+    border-width: 40px 50px 0px 50px;
+    border-color: grey transparent transparent  transparent;
+    border-style: solid;
+    position: absolute;
   }
 
   #show_text
@@ -214,16 +334,29 @@
     font-family: 'Nova Square', cursive;
     font-size: 30px;
     margin-top: -22px;
+    color: white;
   }
 
   .text_part
   {
-
+    cursor: pointer;
   }
 
 </style>
 <div id="poster">
-<div id="eyes"><div id="left_eye" class="eye"><div class="pupil"></div></div><div id="right_eye" class="eye"><div class="pupil"></div></div></div>
+<div id="eyes">
+  <div id="left_eye" class="eye">
+    <div class="pupil"></div>
+    <div class="bomb_ball bomb"></div>
+    <div class="bomb_stem bomb"></div>
+    <div class="bomb_tail bomb"></div>
+  </div>
+  <div id="right_eye" class="eye">
+    <div class="pupil"></div>
+    <div class="bomb_ball bomb"></div>
+    <div class="bomb_stem bomb"></div>
+    <div class="bomb_tail bomb"></div>
+</div></div>
 <div id="top_teeth">
   <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
   <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
@@ -242,13 +375,12 @@
   <div class="right_tooth"><div id="right_fang" class="fang"></div><div class="gum"></div></div>
 </div>
 <div id="show_text">
-<div class="text_part">GrandFather</div>
-<div class="text_part">Geronimo</div>
-<div class="text_part">Predators</div>
+<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3">Grandfather</div>
+<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3">Geronimo</div>
+<div class="text_part play_action" mp3="http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3">Predators</div>
 <div class="text_part">&nbsp;</div>
-<div class="text_part">SUBTERRAINEAN</div>
+<div class="text_part">SUBTERRANEAN</div>
 <div class="text_part">AUG17 9PM</div>
 </div>
-
-
+  <%= render 'tracks/player', :audio_url => 'https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3' %>
 </div>
