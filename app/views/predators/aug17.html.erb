@@ -66,6 +66,11 @@ function playSong(filename)
 
 </script>
 <style>
+
+  a{color: white; text-decoration: none;}
+  a:hover{color: white; text-decoration: none;}
+  a:visited{color: white; text-decoration: none;}
+
   #poster
   {
     background-color: black;
@@ -228,6 +233,17 @@ function playSong(filename)
     position: relative;
   }
 
+  .top_gum
+  {
+    width: 26px;
+    margin-top: -21px;
+    margin-left: -3px;
+    background-color: #a65080;
+    border-radius: 24px;
+    -moz-border-radius: 24px;
+    -webkit-border-radius: 24px;
+  }
+
   .top_tooth
   {
     margin-top: 400px;
@@ -275,7 +291,7 @@ function playSong(filename)
     top: 100px;
     left: 30px;
 
-    -webkit-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
+    -webkit-transition: all 8000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
     -moz-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
     -ms-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
     -o-transition: all 10000ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
@@ -297,7 +313,7 @@ function playSong(filename)
   .bomb
   {
     background-color: grey;
-    opacity: .5;
+    opacity: .6;
   }  
 
   .bomb_ball
@@ -315,8 +331,20 @@ function playSong(filename)
     width: 40px;
     position:absolute;
     left: 30px;
+  }
+
+  .stem_left
+  {
+
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 14px;
+  }
+
+  .stem_right
+  {
+
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 40px;
   }
 
   .bomb_tail
@@ -327,6 +355,7 @@ function playSong(filename)
     border-color: grey transparent transparent  transparent;
     border-style: solid;
     position: absolute;
+    background-color: transparent;
   }
 
   #show_text
@@ -342,24 +371,26 @@ function playSong(filename)
     cursor: pointer;
   }
 
+  
+
 </style>
 <div id="poster">
 <div id="eyes">
   <div id="left_eye" class="eye">
     <div class="pupil"></div>
     <div class="bomb_ball bomb"></div>
-    <div class="bomb_stem bomb"></div>
+    <div class="bomb_stem bomb stem_left"></div>
     <div class="bomb_tail bomb"></div>
   </div>
   <div id="right_eye" class="eye">
     <div class="pupil"></div>
     <div class="bomb_ball bomb"></div>
-    <div class="bomb_stem bomb"></div>
+    <div class="bomb_stem bomb stem_right"></div>
     <div class="bomb_tail bomb"></div>
 </div></div>
 <div id="top_teeth">
-  <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
-  <div class="small_tooth top_tooth"><div class="small_gum"></div><div id="" class="incisor top_incisor"></div></div>
+  <div class="small_tooth top_tooth"><div class="small_gum top_gum"></div><div id="" class="incisor top_incisor"></div></div>
+  <div class="small_tooth top_tooth"><div class="small_gum top_gum"></div><div id="" class="incisor top_incisor"></div></div>
 </div>
 <div id="teeth">
   <div class="whole_gum"></div>
@@ -378,9 +409,9 @@ function playSong(filename)
 <div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3">Grandfather</div>
 <div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3">Geronimo</div>
 <div class="text_part play_action" mp3="http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3">Predators</div>
-<div class="text_part">&nbsp;</div>
-<div class="text_part">SUBTERRANEAN</div>
-<div class="text_part">AUG17 9PM</div>
+<div>&nbsp;</div>
+<div><a href="http://subt.net">SUBTERRANEAN</a></div>
+<div>AUG17 8PM</div>
 </div>
   <%= render 'tracks/player', :audio_url => 'https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3' %>
 </div>
