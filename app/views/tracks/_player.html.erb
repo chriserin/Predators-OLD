@@ -5,7 +5,8 @@
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
-	<% file_format = audio_url.split(/\./).last.split(/\?/)[0] %>
+        <% if audio_url != '' %>
+	<% file_format = audio_url.split(/\./).last.split(/\?/)[0] unless audio_url == '' %>
 	$("#jquery_jplayer_1").jPlayer({
 		ready: function () {
 			$(this).jPlayer("setMedia", {
@@ -15,7 +16,7 @@ $(document).ready(function(){
 		swfPath: "/javascripts",
 		supplied: "<%= file_format %>"
 	});
-	
+	<% end %>
 	$(".jp-audio").css("display", "<%= visibility %>")
 });
 //]]>

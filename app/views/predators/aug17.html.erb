@@ -198,24 +198,34 @@ function playSong(filename)
     margin-top: 140px;
   }
 
-  .small_tooth:nth-child(6), .small_tooth:nth-child(7)
+  .small_tooth:nth-child(5), .small_tooth:nth-child(6)
   {
     margin-top: 200px;
   }
 
-  .small_tooth:nth-child(5), .small_tooth:nth-child(8)
+  .small_tooth:nth-child(4), .small_tooth:nth-child(7)
   {
     margin-top: 180px;
   }
 
-  .small_tooth:nth-child(4), .small_tooth:nth-child(9)
+  .small_tooth:nth-child(3), .small_tooth:nth-child(8)
   {
     margin-top: 160px;
   }
 
-  .small_tooth:nth-child(3)
+  .small_tooth:nth-child(2)
   {
     margin-left: 20px;
+  }
+
+  .small_tooth:nth-child(2), .small_tooth:nth-child(9)
+  {
+    margin-top: 100px;
+  }
+
+  .small_tooth:nth-child(2) .incisor, .small_tooth:nth-child(9) .incisor
+  {
+     border-bottom-width: 120px;
   }
 
   .small_gum
@@ -235,6 +245,7 @@ function playSong(filename)
 
   .top_gum
   {
+    height: 60px;
     width: 26px;
     margin-top: -21px;
     margin-left: -3px;
@@ -242,38 +253,25 @@ function playSong(filename)
     border-radius: 24px;
     -moz-border-radius: 24px;
     -webkit-border-radius: 24px;
+    z-index: 5;
+    position: relative;
   }
 
   .top_tooth
   {
     margin-top: 400px;
     position: absolute;
+    float: left;
   }
 
   .top_tooth:nth-child(2)
   {
-    left: -13px;
   }
 
   .top_tooth:nth-child(1)
   {
-    left: 60px;
+    left: 66px;
   }
-
-  .whole_gum
-  {
-     background-color: pink;
-     opacity: .0;
-     height: 160px;
-     position: absolute;
-     width: 700px;
-     left: 10%;
-     border-radius: 80px;
-    -moz-border-radius: 80px;
-    -webkit-border-radius: 80px;
-     bottom: 32%; 
-  }
-
 
   .pupil
   {
@@ -336,15 +334,15 @@ function playSong(filename)
   .stem_left
   {
 
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 24px;
   }
 
   .stem_right
   {
 
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 32px;
   }
 
   .bomb_tail
@@ -389,11 +387,10 @@ function playSong(filename)
     <div class="bomb_tail bomb"></div>
 </div></div>
 <div id="top_teeth">
-  <div class="small_tooth top_tooth"><div class="small_gum top_gum"></div><div id="" class="incisor top_incisor"></div></div>
-  <div class="small_tooth top_tooth"><div class="small_gum top_gum"></div><div id="" class="incisor top_incisor"></div></div>
+  <div class="top_tooth"><div class="top_gum"></div><div id="" class="incisor top_incisor"></div></div>
+  <div class="top_tooth"><div class="top_gum"></div><div id="" class="incisor top_incisor"></div></div>
 </div>
 <div id="teeth">
-  <div class="whole_gum"></div>
   <div class="left_tooth"><div id="left_fang" class="fang"></div><div class="gum"></div></div>
   <div class="small_tooth"><div id="right_incisor" class="incisor"></div><div class="small_gum"></div></div>
   <div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div>
@@ -413,5 +410,5 @@ function playSong(filename)
 <div><a href="http://subt.net">SUBTERRANEAN</a></div>
 <div>AUG17 8PM</div>
 </div>
-  <%= render 'tracks/player', :audio_url => 'https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3' %>
+  <%= render 'tracks/player', :audio_url => '' %>
 </div>
