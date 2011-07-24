@@ -1,0 +1,74 @@
+
+<style>
+  body{
+  }
+</style>
+<div class="band">COLES&nbsp;AUG5</div>
+<div class="grill">
+<div id="top_teeth"> 
+<div class="small_tooth"><div class="small_gum"></div><div id="right_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+<div class="small_tooth"><div class="small_gum"></div><div id="left_incisor" class="incisor"></div></div> 
+</div> 
+<div id="teeth"> 
+<div class="left_tooth"><div id="left_fang" class="fang"></div><div class="gum"></div></div> 
+<div class="small_tooth"><div id="right_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="small_tooth"><div id="left_incisor" class="incisor"></div><div class="small_gum"></div></div> 
+<div class="right_tooth"><div id="right_fang" class="fang"></div><div class="gum"></div></div> 
+</div> 
+<div class="eye left-eye"></div>
+<div class="eye right-eye"></div>
+<div class="pupil left-pupil"></div>
+<div class="pupil right-pupil"></div>
+</div>
+
+<div class="band automatic_lovers">Automatic&nbsp;Lovers</div>
+<div class="band predators">Predators</div>
+<div class="band everelle">Everelle</div>
+
+<script type="text/javascript">
+  //$("#teeth .small_tooth:nth-child(2)").css("margin-top", 80)
+  $("#teeth .small_tooth:nth-child(3)").css("margin-top", 0)
+  $("#teeth .small_tooth:nth-child(4)").css("margin-top", 30)
+  $("#teeth .small_tooth:nth-child(5)").css("margin-top", 60)
+  $("#teeth .small_tooth:nth-child(6)").css("margin-top", 80)
+  $("#teeth .small_tooth:nth-child(7)").css("margin-top", 60)
+  $("#teeth .small_tooth:nth-child(8)").css("margin-top", 30)
+  $("#teeth .small_tooth:nth-child(9)").css("margin-top", 0)
+  $("#top_teeth .small_tooth:nth-child(2)").css("margin-top", -15)
+  $("#top_teeth .small_tooth:nth-child(3)").css("margin-top", -30)
+  $("#top_teeth .small_tooth:nth-child(4)").css("margin-top", -60)
+  $("#top_teeth .small_tooth:nth-child(5)").css("margin-top", -80)
+  $("#top_teeth .small_tooth:nth-child(6)").css("margin-top", -60)
+  $("#top_teeth .small_tooth:nth-child(7)").css("margin-top", -30)
+  $("#top_teeth .small_tooth:nth-child(8)").css("margin-top", -15)
+  //$("#teeth .small_tooth:nth-child(10)").css("margin-top", 80)
+
+  $(function(){
+    transparentEye();
+    transparentPupil();
+  });
+
+  function transparentEye(){
+    $(".eye").toggleClass("transparentEye");
+    setTimeout(transparentEye, 2000);
+  }
+
+  function transparentPupil(){
+    $(".pupil").toggleClass("transparentEye");
+    setTimeout(transparentPupil, 3000);
+  }
+</script>
