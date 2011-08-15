@@ -4,13 +4,13 @@ $(function(){
 
   $("#jquery_jplayer_1").bind($.jPlayer.event.ended + '.playNext', function(){
     var filename = getNextSong();
-    playSong(filename);  
+    //playSong(filename);  
   });
  
   $(".play_action").bind('click', function(e){
            
       var filename = $(this).attr("mp3");
-      playSong(filename);
+      //playSong(filename);
   });	
 
   togglePupilBright()
@@ -403,9 +403,9 @@ function playSong(filename)
   <div class="right_tooth"><div id="right_fang" class="fang"></div><div class="gum"></div></div>
 </div>
 <div id="show_text">
-<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3">Grandfather</div>
-<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3">Geronimo</div>
-<div class="text_part play_action" mp3="http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3">Predators</div>
+<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3"><a href="http://grandfathermusic.com/site/">Grandfather</a></div>
+<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3"><a href="http://www.myspace.com/thegeronimoband">Geronimo</a></div>
+<div class="text_part play_action" mp3="http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3"><a href="http://www.predators1234.com/">Predators</a></div>
 <div>&nbsp;</div>
 <div><a href="http://subt.net">SUBTERRANEAN</a></div>
 <div>AUG17 8PM</div>
