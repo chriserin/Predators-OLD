@@ -369,7 +369,16 @@ function playSong(filename)
     cursor: pointer;
   }
 
-  
+  .disclaimer {
+    color: red;
+    float: right;
+    margin-right: -6px;
+    margin-top: -20px;
+  }
+
+  .red_text {
+    color: red;
+  }
 
 </style>
 <div id="poster">
@@ -403,12 +412,14 @@ function playSong(filename)
   <div class="right_tooth"><div id="right_fang" class="fang"></div><div class="gum"></div></div>
 </div>
 <div id="show_text">
+<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3"><a href="http://www.myspace.com/thegeronimoband">Geronimo!</a></div>
 <div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Grandfather+-+Why+I%27d+Try+-+01+You%27re+Strange.mp3"><a href="http://grandfathermusic.com/site/">Grandfather</a></div>
-<div class="text_part play_action" mp3="https://s3.amazonaws.com/chriserin_paperclip_test/audio/aug17/Geronimo!+-+Table+Legs.mp3"><a href="http://www.myspace.com/thegeronimoband">Geronimo</a></div>
 <div class="text_part play_action" mp3="http://s3.amazonaws.com/chriserin_paperclip_test/predators/audio/04may11/PredatorsAPR14_A.mp3"><a href="http://www.predators1234.com/">Predators</a></div>
 <div>&nbsp;</div>
 <div><a href="http://subt.net">SUBTERRANEAN</a></div>
 <div>AUG17 8PM</div>
+<div class="red_text">^</div>
+<span class="disclaimer">|--------- starts exactly at 8!!!!!</span>
 </div>
   <%= render 'tracks/player', :audio_url => '' %>
 </div>
