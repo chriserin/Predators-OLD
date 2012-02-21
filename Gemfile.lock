@@ -28,7 +28,6 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
-    annotate-models (1.0.4)
     arel (2.0.10)
     aws-s3 (0.6.2)
       builder
@@ -110,7 +109,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate-models (= 1.0.4)
   aws-s3
   factory_girl_rails (= 1.0)
   faker (= 0.3.1)
