@@ -37,4 +37,8 @@ class GeronimoController < ApplicationController
   def aug5
     render 'predators/aug5', :layout => 'poster_aug5'
   end
+
+  def jun15
+    render 'predators/jun15', :layout => false
+  end
 end
