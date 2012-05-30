@@ -1,8 +1,13 @@
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'predators', :media => 'screen' %>
     <%= stylesheet_link_tag 'curtis_css', :media => 'screen' %>	
     <style>
+      .predators, .marcus, .vindits {
+        white-space:nowrap;
+      }
+
       .marcus .standard .css_char .split_horiz_pos {
         border-color: transparent black;
       }
@@ -66,13 +71,17 @@
         background-color: transparent;
       }
 
+      span {
+        opacity: .9;
+      }
+
       .standard .css_char .stroke {
         border-color: black;
       }
 
       #details {
-        margin-left: 45%;
-        margin-top: -46%;
+        margin-left: 42%;
+        margin-top: -47%;
       }
 
       #container {
@@ -80,7 +89,7 @@
       }
 
       #poster_art {
-        margin: 10px 15%;
+        margin: 40px 12%;
         width: 900px;
         position: relative;
       }
@@ -228,10 +237,20 @@
         background-color: #44B4D5;
       }
 
+      .coles {
+        font-family: 'Italianno', cursive;
+        font-size: 36px;
+        float: left;
+        width: 100%;
+        margin: -30px auto;
+      }
     </style>
   </head>
   <body>
     <div id="container">
+      <div class="coles">
+        Coles Bar 2338 N Milwaukee Ave  --- June 15th at 10pm
+      </div>
       <div id="poster_art">
         <div id="coentrentric-circles">
           <div class="circle t">
