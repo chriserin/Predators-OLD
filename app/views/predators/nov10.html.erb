@@ -9,12 +9,43 @@
         margin: 0;
         background: #cecece;
       }
-      img {
-        float: left;
+      #schema {
         width: 725px;
+        display: inline;
+        float: left;
+      }
+      img {
+        width: 100%;
+      }
+      #details-container {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+      }
+      #schema-container {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
       }
       #details {
-        float: left;
+        padding-top: 100px;
+        width: 1100px;
+        overflow: hidden;
+        display: inline;
+        float: right;
+        margin-right: 50px;
+      }
+      .desc {
+        margin-bottom: 10px;
+        font-family: helvetica;
+        color: #888888;
+        background: #aaaaaa;
+        line-height: 14px;
+        padding-bottom: -2px;
       }
       .standard .css_char .stroke {
         border-color: black;
@@ -28,13 +59,30 @@
       .css_char {
         margin: -10px !important;
       }
+      .band {
+        margin-bottom: 20px;
+      }
 
+      .coles {
+        font-family: 'Italianno', cursive;
+        font-size: 36px;
+        float: left;
+        width: 100%;
+        margin: -40px auto;
+      }
     </style>
   </head>
   <body>
-    <img src="/images/Juno_106_schema.jpg">
+    <div id="schema-container">
+      <div id="schema"><img src="/images/Juno_106_schema.jpg"></div>
+    </div>
+    <div id="details-container">
     <div id="details">
-        <div class="predators">
+      <div class="coles">
+        Coles Bar 2338 N Milwaukee Ave  --- November 10th at 10pm
+      </div>
+        <div class="desc">AGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVEAGGROLOVE</div>
+        <div class="predators band">
           <div id="title" class="curtis tk_proxima_nova size140 standard">
             <a href="http://www.predators1234.com">
               <span class="css_char p">
@@ -92,8 +140,9 @@
             </div>
           </a>
         </div>
-        <div class="vindits">
-          <a href="http://www.reverbnation.com/thevindits">
+        <div class="desc">SYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTHSYNTH</div>
+        <div class="diov band">
+          <a href="http://diov.bandcamp.com/">
             <div id="title" class="curtis tk_proxima_nova size140 standard">
               <span class="css_char d">
                 D
@@ -115,6 +164,7 @@
             </div>
           </a>
         </div>
+        <div class="desc">RAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAERAGGAE</div>
         <div class="MarcusIyah">
           <div id="title" class="curtis tk_proxima_nova size140 standard">
             <span class="css_char m">
@@ -219,5 +269,6 @@
           </div>
         </div>
       </div>
+    </div>
   </body>
 </html>
