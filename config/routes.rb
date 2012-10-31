@@ -28,6 +28,7 @@ SampleApp::Application.routes.draw do
   match '/aug17',   :to => 'geronimo#aug17'
   match '/aug5',   :to => 'geronimo#aug5'
   match '/jun15',   :to => 'geronimo#jun15'
+  match '/nov10',   :to => 'geronimo#nov10'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
